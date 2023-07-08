@@ -12,7 +12,7 @@ class Usuario {
         return new Promise(async (resolve, reject) => {
             try {
                 let query = {
-                    text: "SELECTT id, nombre, email FROM usuarios",
+                    text: "SELECT id, nombre, email FROM usuarios",
                 };
                 let result= await db.query(query);
                 resolve(result.rows)

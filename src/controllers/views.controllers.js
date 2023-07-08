@@ -1,7 +1,15 @@
+import Usuario from "../models/Usuario.models.js";
+
 export const viewHome = (req, res) => {
-    res.render("home");
+    res.render("home", {
+        viewhome: true,
+    });
 };
 
-export const viewUsuarios = (req, res) => {
-    res.render("usuarios");
+export const viewUsuarios = async (req, res) => {
+    let usuarios = await Usuario.findAll();
+    res.render("usuarios", {
+        usuarios,
+        viewUsuarios: true,
+    });
 };
